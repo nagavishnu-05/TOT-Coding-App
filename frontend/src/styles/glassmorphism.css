@@ -1,0 +1,47 @@
+/* Glassmorphism styles */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Powder animation for the title section */
+@keyframes powder-left {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(-20px) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes powder-right {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateX(20px) scale(1.1);
+    opacity: 0.6;
+  }
+}
+
+.animate-powder-left {
+  animation: powder-left 4s ease-in-out infinite;
+}
+
+.animate-powder-right {
+  animation: powder-right 4s ease-in-out infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .glassmorphism {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+} 
