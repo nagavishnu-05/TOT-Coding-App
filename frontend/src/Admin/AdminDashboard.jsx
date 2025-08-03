@@ -51,6 +51,8 @@ const AdminDashboard = () => {
         hiddenTestCases: [{ input: '', output: '' }]
       });
       setShowAddForm(false);
+    } else {
+      alert('Please fill in the title and description fields.');
     }
   };
 
@@ -152,8 +154,8 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-slate-50">
-      <AdminHeader />
-      <div className="max-w-7xl mx-auto p-6">
+      <div className="max-w-7xl mx-auto px-8 py-6">
+        <AdminHeader />
         <NavigationTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         
         {activeTab === 'problemDetails' && (

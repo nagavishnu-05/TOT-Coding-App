@@ -58,6 +58,9 @@ const ProblemDetails = ({ problems, selectedProblem, setSelectedProblem }) => {
                 <span className="px-2 py-1 text-xs font-medium bg-blue-100 text-blue-800 rounded-full">
                   {selectedProblem.category}
                 </span>
+                <span className="px-2 py-1 text-xs font-medium bg-purple-100 text-purple-800 rounded-full">
+                  {selectedProblem.points} points
+                </span>
               </div>
               <p className="text-slate-700 leading-relaxed">{selectedProblem.description}</p>
             </div>
@@ -72,17 +75,35 @@ const ProblemDetails = ({ problems, selectedProblem, setSelectedProblem }) => {
             </div>
 
             <div>
-              <h4 className="text-lg font-semibold text-slate-800 mb-3">Test Cases:</h4>
+              <h4 className="text-lg font-semibold text-slate-800 mb-3">Sample Test Cases (Visible to Students):</h4>
               <div className="space-y-3">
-                {selectedProblem.testCases.map((testCase, index) => (
-                  <div key={index} className="bg-white/50 rounded-lg p-4">
+                {selectedProblem.sampleTestCases && selectedProblem.sampleTestCases.map((testCase, index) => (
+                  <div key={index} className="bg-green-50 border border-green-200 rounded-lg p-4">
                     <div className="mb-2">
                       <span className="font-medium text-slate-700">Input:</span>
-                      <code className="ml-2 bg-slate-100 px-2 py-1 rounded text-sm">{testCase.input}</code>
+                      <code className="ml-2 bg-green-100 px-2 py-1 rounded text-sm">{testCase.input}</code>
                     </div>
                     <div>
                       <span className="font-medium text-slate-700">Output:</span>
-                      <code className="ml-2 bg-slate-100 px-2 py-1 rounded text-sm">{testCase.output}</code>
+                      <code className="ml-2 bg-green-100 px-2 py-1 rounded text-sm">{testCase.output}</code>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold text-slate-800 mb-3">Hidden Test Cases (Backend Testing):</h4>
+              <div className="space-y-3">
+                {selectedProblem.hiddenTestCases && selectedProblem.hiddenTestCases.map((testCase, index) => (
+                  <div key={index} className="bg-red-50 border border-red-200 rounded-lg p-4">
+                    <div className="mb-2">
+                      <span className="font-medium text-slate-700">Input:</span>
+                      <code className="ml-2 bg-red-100 px-2 py-1 rounded text-sm">{testCase.input}</code>
+                    </div>
+                    <div>
+                      <span className="font-medium text-slate-700">Output:</span>
+                      <code className="ml-2 bg-red-100 px-2 py-1 rounded text-sm">{testCase.output}</code>
                     </div>
                   </div>
                 ))}

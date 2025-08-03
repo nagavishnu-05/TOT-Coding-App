@@ -2,8 +2,6 @@ import React from 'react';
 import { Plus } from 'lucide-react';
 
 const AddProblemModal = ({ 
-  showAddForm, 
-  setShowAddForm, 
   newProblem, 
   setNewProblem,
   handleAddProblem,
@@ -15,10 +13,9 @@ const AddProblemModal = ({
   removeSampleTestCase,
   addHiddenTestCase,
   updateHiddenTestCase,
-  removeHiddenTestCase
+  removeHiddenTestCase,
+  onClose
 }) => {
-  if (!showAddForm) return null;
-
   return (
     <div className="fixed inset-0 bg-white/20 backdrop-blur-sm flex items-center justify-center z-50">
       <div className="bg-white rounded-xl shadow-2xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
@@ -26,7 +23,7 @@ const AddProblemModal = ({
           <div className="flex justify-between items-center mb-6">
             <h3 className="text-2xl font-bold text-slate-800">Add New Problem</h3>
             <button
-              onClick={() => setShowAddForm(false)}
+              onClick={onClose}
               className="text-red-500 hover:text-red-700 text-xl"
             >
               ✕
@@ -201,7 +198,7 @@ const AddProblemModal = ({
               Add Problem
             </button>
             <button
-              onClick={() => setShowAddForm(false)}
+              onClick={onClose}
               className="px-6 py-3 bg-gray-500 text-white rounded-lg font-semibold hover:bg-gray-600 transition"
             >
               Cancel

@@ -5,7 +5,7 @@ export const problemsData = [
     title: 'Two Sum',
     difficulty: 'Easy',
     category: 'Arrays',
-    description: 'Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.',
+    description: 'Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target. You may assume that each input would have exactly one solution, and you may not use the same element twice. You can return the answer in any order.',
     constraints: [
       '2 <= nums.length <= 104',
       '-109 <= nums[i] <= 109',
@@ -32,7 +32,7 @@ export const problemsData = [
     title: 'Valid Parentheses',
     difficulty: 'Medium',
     category: 'Stack',
-    description: 'Given a string s containing just the characters "(", ")", "{", "}", "[" and "]", determine if the input string is valid.',
+    description: 'Given a string s containing just the characters "(", ")", "{", "}", "[" and "]", determine if the input string is valid. An input string is valid if: Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order. Every close bracket has a corresponding open bracket of the same type.',
     constraints: [
       '1 <= s.length <= 104',
       's consists of parentheses only \'()[]{}\''
@@ -50,79 +50,6 @@ export const problemsData = [
     ],
     solved: false,
     submissions: 32,
-    points: 20
-  },
-  {
-    id: 3,
-    title: 'Reverse String',
-    difficulty: 'Easy',
-    category: 'Strings',
-    description: 'Write a function that reverses a string. The input string is given as an array of characters s.',
-    constraints: [
-      '1 <= s.length <= 105',
-      's[i] is a printable ascii character.'
-    ],
-    sampleTestCases: [
-      { input: 's = ["h","e","l","l","o"]', output: '["o","l","l","e","h"]' },
-      { input: 's = ["H","a","n","n","a","h"]', output: '["h","a","n","n","a","H"]' }
-    ],
-    hiddenTestCases: [
-      { input: 's = ["a"]', output: '["a"]' },
-      { input: 's = ["a","b"]', output: '["b","a"]' },
-      { input: 's = ["1","2","3","4","5"]', output: '["5","4","3","2","1"]' },
-      { input: 's = ["A","B","C","D"]', output: '["D","C","B","A"]' }
-    ],
-    solved: false,
-    submissions: 28,
-    points: 10
-  },
-  {
-    id: 4,
-    title: 'Maximum Subarray',
-    difficulty: 'Medium',
-    category: 'Dynamic Programming',
-    description: 'Given an integer array nums, find the subarray with the largest sum, and return its sum.',
-    constraints: [
-      '1 <= nums.length <= 105',
-      '-104 <= nums[i] <= 104'
-    ],
-    sampleTestCases: [
-      { input: 'nums = [-2,1,-3,4,-1,2,1,-5,4]', output: '6' },
-      { input: 'nums = [1]', output: '1' },
-      { input: 'nums = [5,4,-1,7,8]', output: '23' }
-    ],
-    hiddenTestCases: [
-      { input: 'nums = [-1,-2,-3,-4]', output: '-1' },
-      { input: 'nums = [2,3,-2,4]', output: '7' },
-      { input: 'nums = [0,0,0,0]', output: '0' },
-      { input: 'nums = [100,-50,100,-50]', output: '100' }
-    ],
-    solved: false,
-    submissions: 15,
-    points: 20
-  },
-  {
-    id: 5,
-    title: 'Climbing Stairs',
-    difficulty: 'Easy',
-    category: 'Dynamic Programming',
-    description: 'You are climbing a staircase. It takes n steps to reach the top. Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?',
-    constraints: [
-      '1 <= n <= 45'
-    ],
-    sampleTestCases: [
-      { input: 'n = 2', output: '2' },
-      { input: 'n = 3', output: '3' },
-      { input: 'n = 4', output: '5' }
-    ],
-    hiddenTestCases: [
-      { input: 'n = 1', output: '1' },
-      { input: 'n = 5', output: '8' },
-      { input: 'n = 6', output: '13' },
-      { input: 'n = 10', output: '89' }
-    ],
-    solved: false,
-    submissions: 22,
     points: 10
   }
 ];
@@ -150,7 +77,7 @@ export const addProblem = (newProblem) => {
     id: problemsData.length + 1,
     solved: false,
     submissions: 0,
-    points: newProblem.points || (newProblem.difficulty === 'Easy' ? 10 : newProblem.difficulty === 'Medium' ? 20 : 30)
+    points: newProblem.points || (newProblem.difficulty === 'Easy' ? 10 : newProblem.difficulty === 'Medium' ? 10 : 10)
   });
 };
 
